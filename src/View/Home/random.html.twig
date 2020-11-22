@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% include '/Home/_header.html.twig' %}
+
+        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+
+        {% set data = random %}
+        {%  include 'Home/_recipe.html.twig' %}
+   <div class="random-button-container"> <a href="/random/randomcocktail" class="random-button">Show me another random cocktail</a></div>
+{% endblock %}

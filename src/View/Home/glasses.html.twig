@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% include '/Home/_header.html.twig' %}
+
+    <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+    <div class="paper-list">
+    <h2> Shake a cocktail in your glass!</h2>
+    <ul>
+        {% for g in glasses %}
+            <li>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="https://www.thecocktaildb.com/api/json/v1/1/filter.php?g={{ g.strGlass }}">{{ g.strGlass }}</a> </li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endblock %}

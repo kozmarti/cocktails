@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% include '/Home/_header.html.twig' %}
+
+    <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+<div class="paper-list">
+    <h2> What do you have in your fridge?</h2>
+<ul>
+{% for i in ingredients %}
+    <li><i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={{ i.strIngredient1 }}">
+{{ i.strIngredient1 }}</a></li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<div class="cocktail-recipe">
+    <div class="recipe-text">
+    <h2>{{ data.strDrink }}</h2>
+
+
+    <div><i class="fa fa-glass" aria-hidden="true"></i> {{ data.strGlass }}</div>
+        <br>
+    <div><i class="fa fa-info-circle" aria-hidden="true"></i> {{ data.strInstructions }}</div>
+        <br>
+    <div><i class="fa fa-list-ol" aria-hidden="true"></i> Ingredients:
+    <ul>
+    {% for ingredient in ingredients %}
+        <li>{{ ingredient }}</li>
+
+    {% endfor %}
+    </ul>
+    </div>
+    </div>
+    <div class="right-recipe">
+        {% if data.strAlcoholic == 'Alcoholic' %}
+            <div><i class="fa fa-star" aria-hidden="true"></i> {{ data.strAlcoholic  }}</div>
+        {% else %}
+            <div><i class="fa fa-star-o" aria-hidden="true"></i> {{ data.strAlcoholic  }}</div>
+        {% endif %}
+        <img class="recipe-img" src="{{data.strDrinkThumb}}" alt="{{ data.strDrink }} photo"></div>
+
+</div>

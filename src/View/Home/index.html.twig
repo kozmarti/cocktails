@@ -1,5 +1,13 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Hello Wilder !</h1>
+    {% include '/Home/_header.html.twig' %}
+    <nav>
+        <a href="/api/abc"><div>Look up a cocktail by name</div></a>
+        <a href="/ingredient/ingredients"><div>Search by ingredient</div></a>
+        <a href="/glass/glasses"><div>Find cocktail by glass</div></a>
+        <a href="/random/randomcocktail"><div>Show me a random cocktail</div></a>
+    </nav>
+
+
 {% endblock %}
