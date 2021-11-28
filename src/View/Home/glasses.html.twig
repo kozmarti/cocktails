@@ -2,15 +2,25 @@
 
 {% block content %}
     {% include '/Home/_header.html.twig' %}
+        <div class="d-flex justify-center">
+    <nav>
+    <a href=""><div class="nav-pink"> <i class="fas fa-search"></i> by anything</div></a>
+        <a href="/api/abc"><div class="nav-yellow"> <i class="fas fa-sort-alpha-down"></i> by abc</div></a>
+        <a href="/ingredient/ingredients"><div class="nav-blue"> <i class="fas fa-list-ol"></i> by ingredient</div></a>
+        <a href="/glass/glasses"><div class="nav-orange"><i class="fas fa-wine-glass-alt"></i> <i class="fas fa-glass-martini-alt"></i> <i class="fas fa-glass-whiskey"></i> by glass</div></a>
+        <a href="/random/randomcocktail"><div class="nav-green"> <i class="fas fa-random"></i> random</div></a>
+    </nav>
+    </div>
 
-    <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+    <a href="/"><div class="nav-blue"><i class="fa fa-home" aria-hidden="true"></i></div></a>
     <div class="paper-list">
     <h2> Shake a cocktail in your glass!</h2>
-    <ul>
+<div class="d-flex">
         {% for g in glasses %}
-            <li>
-                <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="https://www.thecocktaildb.com/api/json/v1/1/filter.php?g={{ g.strGlass }}">{{ g.strGlass }}</a> </li>
+            {% if g.strGlass!= '' %}
+            <div> <i class="fas fa-check"></i><a href="https://www.thecocktaildb.com/api/json/v1/1/filter.php?g={{ g.strGlass}}">{{ g.strGlass  }}</a>     </div>
+            {% endif %}
         {% endfor %}
-    </ul>
+</div>
     </div>
 {% endblock %}

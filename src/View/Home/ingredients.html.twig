@@ -5,12 +5,11 @@
 
     <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
 <div class="paper-list">
-    <h2> What do you have in your fridge?</h2>
-<ul>
+    <h2> <div class="nav-blue"> <i class="fas fa-list-ol"></i> by ingredientWhat do you have in your fridge? </div> </h2>
+<div class="d-flex">
 {% for i in ingredients %}
-    <li><i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={{ i.strIngredient1 }}">
-{{ i.strIngredient1 }}</a></li>
+   <div> <i class="fas fa-check"></i><a href="https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={{ i.strIngredient1 }}">{{ i.strIngredient1 }}</a></div>
 {% endfor %}
-</ul>
+</div>
 </div>
 {% endblock %}
