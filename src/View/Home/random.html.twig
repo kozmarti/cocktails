@@ -2,10 +2,7 @@
 
 {% block content %}
     {% include '/Home/_header.html.twig' %}
-
-        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
-
         {% set data = random %}
         {%  include 'Home/_recipe.html.twig' %}
-   <div class="random-button-container"> <a href="/random/randomcocktail" class="random-button">Show me another random cocktail</a></div>
+   <div class="random-button-container"><a href="/random/randomcocktail"><div class="button-style nav-green"> <i class="fas fa-random"></i> new random!</div></a></div>
 {% endblock %}

@@ -11,20 +11,12 @@ use DateTime;
 
 class ApiController extends AbstractController
 {
-    public function cocktails()
+    public function abc($letter)
     {
         $client = HttpClient::create();
-        $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=c');
+        $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='.$letter);
         $drinks=($response->toArray())["drinks"];
-
-        foreach ($drinks as $drink){
-            echo '<pre>';
-            echo $drink["strDrink"];
-        }
-
-    }
-    public function abc(){
-        return $this->twig->render('Home/abc.html.twig');
+        return $this->twig->render('Home/abc.html.twig', ['drinks' => $drinks, 'letter' => $letter]);
     }
 
 }

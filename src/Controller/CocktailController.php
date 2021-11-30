@@ -11,6 +11,8 @@
 namespace App\Controller;
 
 use App\Model\ItemManager;
+use Symfony\Component\HttpClient\Exception\ClientException;
+use Symfony\Component\HttpClient\HttpClient;
 
 /**
  * Class ItemController
@@ -18,6 +20,53 @@ use App\Model\ItemManager;
  */
 class CocktailController extends AbstractController
 {
+
+    public function cocktail($cocktailName)
+    {
+        $client = HttpClient::create();
+        $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='.$cocktailName);
+        $cocktail = ($response->toArray())["drinks"][0];
+        $ingredients = [];
+        $measures = [];
+        foreach (range(0, 15) as $i) {
+            if (!empty($cocktail['strIngredient' . $i])) {
+                $ingredients[$i] =  $cocktail['strMeasure' .  $i] . ' ' . $cocktail['strIngredient' . $i];
+            }
+        }
+
+
+
+        return $this->twig->render('Item/index.html.twig', ['cocktail' => $cocktail, 'ingredients' => $ingredients]);
+    }
+
+    public function result($word)
+    {
+        $text='result for "' . urldecode($word).'"';
+        $client = HttpClient::create();
+        $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i='.$word);
+        if (!empty($response->getContent())) {
+            $results=($response->toArray())["drinks"];
+        } else {
+            $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?g='.$word);
+            if (!empty($response->getContent())) {
+                $results=($response->toArray())["drinks"];
+            }else{
+                $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='.$word);
+                if (!empty($response->getContent())) {
+                    $results=($response->toArray())["drinks"];
+                }else{
+                $results=[];
+                $text='No result for "' . urldecode($word).'"';
+                }
+            }
+        }
+       
+
+        return $this->twig->render('Item/show.html.twig', ['results' => $results, 'text' => $text]);
+    }
+
+
+
     /**
      * Display item listing
      *

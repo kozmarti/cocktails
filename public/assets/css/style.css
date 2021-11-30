@@ -3,7 +3,8 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: 50% 30%;
-  animation: fadein 4s;
+  animation: fadein 2s;
+  font-family: "Caveat", cursive;
 }
 
 @keyframes fadein {
@@ -15,6 +16,9 @@ body {
   }
 }
 
+.size-2em {
+  font-size: 2em;
+}
 header {
   display: flex;
   color: white;
@@ -72,15 +76,21 @@ header img {
   flex-wrap: wrap;
 }
 
-.d-flex div {
-  padding-left: 40px;
-}
-
 .justify-center {
   justify-content: center;
 }
 
-nav {
+.header-transparent-container-box {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 0 10px 0;
+}
+
+.transparent-container-box-nav {
+  border-radius: 10px !important;
   display: flex;
   width: 700px;
   flex-direction: column;
@@ -88,50 +98,114 @@ nav {
   align-items: center;
   font-family: "Caveat", cursive;
   font-size: 2em;
-  color: whitesmoke;
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
+}
+.list-button-margin {
+  margin: 15px 0 15px 0;
+}
+.transparent-container-box {
+  border-radius: 10px !important;
+  display: flex;
+  width: 700px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: "Caveat", cursive;
+  font-size: 2em;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.button-margin {
+  margin: 5px;
 }
 
 .nav-pink {
-  color: #ff00ff;
+  color: #ff00ff !important;
 }
 
 .nav-green {
-  color: #4dffb8;
+  color: #4dffb8 !important;
 }
 
 .nav-yellow {
-  color: #ccff33;
+  color: #ccff33 !important;
 }
 
 .nav-blue {
-  color: #00ffff;
+  color: #00ffff !important;
 }
 
 .nav-orange {
-  color: #ffcc66;
+  color: #ffcc66 !important;
+}
+
+.pink {
+  color: #ff00ff !important;
+}
+
+.green {
+  color: #4dffb8 !important;
+}
+
+.yellow {
+  color: #ccff33 !important;
+}
+
+.blue {
+  color: #00ffff !important;
+}
+
+.orange {
+  color: #ffcc66 !important;
 }
 
 .nav-pink:hover {
-  border: solid 1px #ff00ff;
+  border: solid 1px #ff00ff !important;
   transition: 1s;
 }
 
 .nav-green:hover {
-  border: solid 1px #4dffb8;
+  border: solid 1px #4dffb8 !important;
   transition: 1s;
 }
 
 .nav-yellow:hover {
-  border: solid 1px #ccff33;
+  border: solid 1px #ccff33 !important;
   transition: 1s;
+}
+.active-yellow {
+  border: solid 1px #ccff33 !important;
+  background-color: #001a1a !important;
+  padding-right: 30px !important;
+  z-index: 10000 !important;
 }
 
 .nav-blue:hover {
-  border: solid 1px #00ffff;
+  border: solid 1px #00ffff !important;
   transition: 1s;
+}
+.list-button-margin-abc{
+  margin: 5px !important;
+}
+
+.abc-list-container{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.abc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.list-container {
+  display: flex;
+  flex-grow: 3;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .nav-orange:hover {
@@ -143,7 +217,7 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-nav div {
+.button-style {
   background-color: black;
   border: solid 1px black;
   width: 200px;
@@ -155,10 +229,9 @@ nav div {
 
 a {
   text-decoration: none;
-  color: white;
 }
 
-nav div:hover {
+.button-style:hover {
   background-color: #001a1a;
   transition: 1s;
 }
@@ -206,18 +279,12 @@ nav div:hover {
   font-weight: bold;
 }
 
-.letter {
-  padding: 10px;
-  border-radius: 3px;
-}
-
 .letter:active {
   box-shadow: 1px 1px 2px 2px #888888;
   background-color: #2d9abf;
   transition: 2s;
 }
 
-.letter:hover,
 .random-button:hover {
   box-shadow: 1px 1px 2px 2px #888888;
   background-color: #2d9abf;
@@ -246,30 +313,48 @@ nav div:hover {
   margin-bottom: 20px;
 }
 
+.margin-button{
+  margin: 15px;
+}
 .random-button-container {
   display: flex;
   justify-content: center;
+  font-size: 2em;
 }
 
 .cocktail-recipe {
   display: flex;
+  max-width: 900px;
   flex-wrap: wrap-reverse;
   justify-content: space-between;
-  align-items: center;
-  background-image: url("/assets/images/paper.jpg");
-  box-shadow: 1px 1px 3px 1px #555;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
   font-size: 1.2em;
-  color: midnightblue;
+  color: #00ffff;
   font-family: "Caveat", cursive;
-  margin: 100px 200px;
-  animation: fadein2 3s;
+  animation: fadein2 1s;
+}
+
+.double-img-container {
+  position: absolute;
 }
 
 .recipe-img {
+  position: relative;
+  left: 0;
+  top: 0;
   width: auto;
-  height: 400px;
-  margin: 50px;
-  box-shadow: 1px 1px 3px 3px #555;
+  height: 250px;
+}
+
+.recipe-img-blurred {
+  position: relative;
+  left: -30px;
+  top: -30px;
+  width: auto;
+  height: 350px;
+  filter: blur(6px);
 }
 
 .recipe-text {
@@ -280,25 +365,17 @@ nav div:hover {
 
 .right-recipe {
   margin: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+
   font-size: 1.7em;
 }
 
-.paper-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-image: url("/assets/images/paper.jpg");
-  box-shadow: 1px 1px 3px 3px #555;
-  font-size: 1.8em;
-  color: midnightblue;
-  font-family: "Caveat", cursive;
-  margin: 100px 500px;
-  animation: fadein2 3s;
+.cock-title{
+  margin-bottom: 50px;
+}
+.alcoholic {
+  margin-bottom: 100px;
+  justify-self: flex-start;
+  align-self: flex-start;
 }
 
 .paper-list ul {

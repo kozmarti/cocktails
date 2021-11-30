@@ -1,9 +1,17 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Item {{ item.title }}</h1>
-    <p>{{ item.id }}. {{ item.title }}</p>
-    <a href="/item/edit/{{ item.id }}">Edit</a>
-    <a href="/item/delete/{{item.id}}">Supprimer</a>
-    <a href="/item/index">Back</a>
+    {% include '/Home/_header.html.twig' %}
+
+
+
+        <div class="d-flex justify-center">
+            <div class="size-2em transparent-container-box">
+                <div  class="green header-transparent-container-box">  <span><a class="button-style nav-green" href="/" class=""><i class="fas fa-arrow-left"></i></a></span> <span class="margin-button">  {{ text }} </span></div>
+                    {% for r in results %}
+                        <a class="list-button-margin" href="/cocktail/cocktail/{{ r.strDrink|lower }}"><span class="button-style nav-pink">{{ r.strDrink }}</span></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 {% endblock %}

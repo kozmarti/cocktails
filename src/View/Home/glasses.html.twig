@@ -2,25 +2,21 @@
 
 {% block content %}
     {% include '/Home/_header.html.twig' %}
-        <div class="d-flex justify-center">
-    <nav>
-    <a href=""><div class="nav-pink"> <i class="fas fa-search"></i> by anything</div></a>
-        <a href="/api/abc"><div class="nav-yellow"> <i class="fas fa-sort-alpha-down"></i> by abc</div></a>
-        <a href="/ingredient/ingredients"><div class="nav-blue"> <i class="fas fa-list-ol"></i> by ingredient</div></a>
-        <a href="/glass/glasses"><div class="nav-orange"><i class="fas fa-wine-glass-alt"></i> <i class="fas fa-glass-martini-alt"></i> <i class="fas fa-glass-whiskey"></i> by glass</div></a>
-        <a href="/random/randomcocktail"><div class="nav-green"> <i class="fas fa-random"></i> random</div></a>
-    </nav>
-    </div>
+
 
     <a href="/"><div class="nav-blue"><i class="fa fa-home" aria-hidden="true"></i></div></a>
-    <div class="paper-list">
-    <h2> Shake a cocktail in your glass!</h2>
-<div class="d-flex">
-        {% for g in glasses %}
-            {% if g.strGlass!= '' %}
-            <div> <i class="fas fa-check"></i><a href="https://www.thecocktaildb.com/api/json/v1/1/filter.php?g={{ g.strGlass}}">{{ g.strGlass  }}</a>     </div>
-            {% endif %}
-        {% endfor %}
-</div>
-    </div>
+
+
+        <div class="d-flex justify-center">
+            <div class="size-2em transparent-container-box">
+                <div  class="orange header-transparent-container-box"> <span><a class="button-style nav-green" href="/" class=""><i class="fas fa-arrow-left"></i></a></span> <span class="margin-button">  <i class="fas fa-wine-glass-alt"></i> <i class="fas fa-glass-martini-alt"></i> <i class="fas fa-glass-whiskey"></i> by glass </span></div>
+                    {% for g in glasses %}
+                        {% if g.strGlass!= '' %}
+                            <a class="list-button-margin" href="/cocktail/result/{{ g.strGlass}}"><span class="button-style nav-orange">{{ g.strGlass  }}</span></a>
+                        {% endif %}                    
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
 {% endblock %}

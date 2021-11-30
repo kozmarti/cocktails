@@ -1,11 +1,15 @@
+
+<div class="d-flex justify-center">
 <div class="cocktail-recipe">
     <div class="recipe-text">
-    <h2>{{ data.strDrink }}</h2>
-
+   
+        {% if data.strAlcoholic == 'Alcoholic' %}
+            <div class="alcoholic"><i class="fas fa-star" aria-hidden="true"></i> {{ data.strAlcoholic  }}</div>
+        {% else %}
+            <div  class="alcoholic"><i class="far fa-star" aria-hidden="true"></i> {{ data.strAlcoholic  }}</div>
+        {% endif %}
 
     <div><i class="fa fa-glass" aria-hidden="true"></i> {{ data.strGlass }}</div>
-        <br>
-    <div><i class="fa fa-info-circle" aria-hidden="true"></i> {{ data.strInstructions }}</div>
         <br>
     <div><i class="fa fa-list-ol" aria-hidden="true"></i> Ingredients:
     <ul>
@@ -13,15 +17,21 @@
         <li>{{ ingredient }}</li>
 
     {% endfor %}
-    </ul>
+    </ul></div>
+        <br>
+    <div>
+    <i class="fa fa-info-circle" aria-hidden="true"></i> {{ data.strInstructions }}
+    
     </div>
     </div>
     <div class="right-recipe">
-        {% if data.strAlcoholic == 'Alcoholic' %}
-            <div><i class="fa fa-star" aria-hidden="true"></i> {{ data.strAlcoholic  }}</div>
-        {% else %}
-            <div><i class="fa fa-star-o" aria-hidden="true"></i> {{ data.strAlcoholic  }}</div>
-        {% endif %}
-        <img class="recipe-img" src="{{data.strDrinkThumb}}" alt="{{ data.strDrink }} photo"></div>
 
+         <h4 class="cock-title"> {{ data.strDrink }}</h4>
+        <div class="double-img-container">
+        <img class="recipe-img-blurred" src="{{data.strDrinkThumb}}" alt="{{ data.strDrink }} photo">
+        </div>
+        <img class="recipe-img" src="{{data.strDrinkThumb}}" alt="{{ data.strDrink }} photo">
+    </div>
+</div>
+</div>
 </div>
