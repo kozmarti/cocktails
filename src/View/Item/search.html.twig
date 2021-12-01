@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% include '/Home/_header.html.twig' %}
+    <span><a class="button-style nav-green fix-back-button" href="/" class=""><i class="fas fa-arrow-left"></i></a></span>
+        <div class="d-flex justify-center">
+            <div class="size-2em transparent-container-box">
+                <div  class="pink header-transparent-container-box"> <span class="margin-button">  <i class="fas fa-search"></i> by anything </span></div>
+                    <form class="search-form" action="/cocktail/resultby" method="post">
+                        <input class="search-word" type="text" name="word" placeholder="Search">
+                        <button class="button-style nav-pink search-button" type="submit"> <i class="fas fa-search"></i> </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

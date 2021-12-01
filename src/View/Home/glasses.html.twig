@@ -4,12 +4,12 @@
     {% include '/Home/_header.html.twig' %}
 
 
-    <a href="/"><div class="nav-blue"><i class="fa fa-home" aria-hidden="true"></i></div></a>
+<span><a class="button-style nav-green fix-back-button" href="javascript:history.back()" class=""><i class="fas fa-arrow-left"></i></a></span>
 
 
         <div class="d-flex justify-center">
             <div class="size-2em transparent-container-box">
-                <div  class="orange header-transparent-container-box"> <span><a class="button-style nav-green" href="/" class=""><i class="fas fa-arrow-left"></i></a></span> <span class="margin-button">  <i class="fas fa-wine-glass-alt"></i> <i class="fas fa-glass-martini-alt"></i> <i class="fas fa-glass-whiskey"></i> by glass </span></div>
+                <div  class="orange header-transparent-container-box"><span class="margin-button">  <i class="fas fa-wine-glass-alt"></i> <i class="fas fa-glass-martini-alt"></i> <i class="fas fa-glass-whiskey"></i> by glass </span></div>
                     {% for g in glasses %}
                         {% if g.strGlass!= '' %}
                             <a class="list-button-margin" href="/cocktail/result/{{ g.strGlass}}"><span class="button-style nav-orange">{{ g.strGlass  }}</span></a>

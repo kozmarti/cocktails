@@ -84,7 +84,7 @@ header img {
   width: 100%;
   background-color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 10px 10px 0 0;
   padding: 10px 0 10px 0;
 }
@@ -176,10 +176,32 @@ header img {
   transition: 1s;
 }
 .active-yellow {
-  border: solid 1px #ccff33 !important;
-  background-color: #001a1a !important;
+  color: black !important;
+  border: solid 1px #001a1a !important;
+  background-color:  #ccff33!important;
   padding-right: 30px !important;
   z-index: 10000 !important;
+}
+
+.letter-button:hover {
+  color: black !important;
+  border: solid 1px #001a1a !important;
+  background-color:  #ccff33!important;
+  padding-right: 30px !important;
+  z-index: 10000 !important;
+}
+
+.different-first-letter{
+  background-color: #ff00ff;
+  max-width: 200px !important;
+  padding: 0px !important;
+  margin: 5px !important;
+}
+
+.different-first-letter::first-letter{
+  color: #ccff33 !important;
+  font-weight: 900;
+  font-size: 1.5em;
 }
 
 .nav-blue:hover {
@@ -291,14 +313,44 @@ a {
   transition: 2s;
 }
 
-.fa-home {
+.fix-back-button {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  font-size: 1.3em;
-  border-radius: 20px;
-  padding: 20px;
+  font-size: 1.5em;
+  width: 50px;
 }
+
+.search-button{
+  font-size: 1em;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  margin: 0px;
+}
+
+.search-word{
+  height: 50px;
+  border-radius: 10px;
+  font-family:  "Caveat", cursive;
+  font-size: 1em;
+  color: white;
+  background-color: rgba(255, 0, 255, 0.301);
+  border: white solid 1px;
+}
+
+
+.search-form{
+  display: flex;
+  align-items: flex-start;
+  margin: 50px;
+}
+
+.search-button:hover{
+  cursor: pointer;
+}
+
+
 
 .random-button {
   bottom: 20px;
@@ -331,7 +383,6 @@ a {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   font-size: 1.2em;
-  color: #00ffff;
   font-family: "Caveat", cursive;
   animation: fadein2 1s;
 }

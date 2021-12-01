@@ -33,10 +33,11 @@ class CocktailController extends AbstractController
                 $ingredients[$i] =  $cocktail['strMeasure' .  $i] . ' ' . $cocktail['strIngredient' . $i];
             }
         }
+        $color = ["blue", "orange", "green", "yellow", "pink"][rand(0,4)];
 
 
 
-        return $this->twig->render('Item/index.html.twig', ['cocktail' => $cocktail, 'ingredients' => $ingredients]);
+        return $this->twig->render('Item/show_cocktail.html.twig', ['cocktail' => $cocktail, 'ingredients' => $ingredients, "color" => $color]);
     }
 
     public function result($word)
@@ -62,7 +63,35 @@ class CocktailController extends AbstractController
         }
        
 
-        return $this->twig->render('Item/show.html.twig', ['results' => $results, 'text' => $text]);
+        return $this->twig->render('Item/result.html.twig', ['results' => $results, 'text' => $text]);
+    }
+
+    public function resultby()
+    {
+        if ($_POST['word']){
+            $word = $_POST['word'];
+            $text='result for "' . urldecode($word).'"';
+            $client = HttpClient::create();
+            $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i='.$word);
+            if (!empty($response->getContent())) {
+                $results=($response->toArray())["drinks"];
+            } else {
+                $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?g='.$word);
+                if (!empty($response->getContent())) {
+                    $results=($response->toArray())["drinks"];
+                }else{
+                    $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='.$word);
+                    if (!empty($response->getContent())) {
+                        $results=($response->toArray())["drinks"];
+                    }else{
+                    $results=[];
+                    $text='No result for "' . urldecode($word).'"';
+                    }
+                }
+            }
+        }
+
+        return $this->twig->render('Item/result.html.twig', ['results' => $results, 'text' => $text]);
     }
 
 
@@ -75,12 +104,11 @@ class CocktailController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index()
+    public function search()
     {
-        $itemManager = new ItemManager();
-        $items = $itemManager->selectAll();
 
-        return $this->twig->render('Item/index.html.twig', ['items' => $items]);
+
+        return $this->twig->render('Item/search.html.twig');
     }
 
 

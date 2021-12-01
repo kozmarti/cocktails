@@ -3,11 +3,11 @@
 {% block content %}
     {% include '/Home/_header.html.twig' %}
 
-
+<span><a class="button-style nav-green fix-back-button" href="javascript:history.back()" class=""><i class="fas fa-arrow-left"></i></a></span>
 
         <div class="d-flex justify-center">
             <div class="size-2em transparent-container-box">
-                <div  class="blue header-transparent-container-box">  <span><a class="button-style nav-green" href="/" class=""><i class="fas fa-arrow-left"></i></a></span> <span class="margin-button">  <i class="fas fa-list-ol"></i> by ingredient </span></div>
+                <div  class="blue header-transparent-container-box">  <span class="margin-button">  <i class="fas fa-list-ol"></i> by ingredient </span></div>
                     {% for i in ingredients %}
                         <a class="list-button-margin" href="/cocktail/result/{{ i.strIngredient1 }}"><span class="button-style nav-blue">{{ i.strIngredient1 }}</span></a>
                     {% endfor %}

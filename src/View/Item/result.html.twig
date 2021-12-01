@@ -2,12 +2,12 @@
 
 {% block content %}
     {% include '/Home/_header.html.twig' %}
-
+<span><a class="button-style nav-green fix-back-button" href="javascript:history.back()" class=""><i class="fas fa-arrow-left"></i></a></span>
 
 
         <div class="d-flex justify-center">
             <div class="size-2em transparent-container-box">
-                <div  class="green header-transparent-container-box">  <span><a class="button-style nav-green" href="/" class=""><i class="fas fa-arrow-left"></i></a></span> <span class="margin-button">  {{ text }} </span></div>
+                <div  class="green header-transparent-container-box"> <span class="margin-button">  {{ text }} </span></div>
                     {% for r in results %}
                         <a class="list-button-margin" href="/cocktail/cocktail/{{ r.strDrink|lower }}"><span class="button-style nav-pink">{{ r.strDrink }}</span></a>
                     {% endfor %}

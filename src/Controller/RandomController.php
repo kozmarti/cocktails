@@ -21,9 +21,9 @@ class RandomController extends AbstractController
                 $ingredients[$i] =  $random['strMeasure' .  $i] . ' ' . $random['strIngredient' . $i];
             }
         }
+        $color = ["blue", "orange", "green", "yellow", "pink"][rand(0,4)];
 
 
-
-        return $this->twig->render('Home/random.html.twig', ['random' => $random, 'ingredients' => $ingredients]);
+        return $this->twig->render('Home/random.html.twig', ['random' => $random, 'ingredients' => $ingredients, 'color' => $color]);
     }
 }

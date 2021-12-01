@@ -2,10 +2,10 @@
 
 {% block content %}
 {% include '/Home/_header.html.twig' %}
+<span><a class="button-style nav-green fix-back-button" href="/" class=""><i class="fas fa-arrow-left"></i></a></span>
 <div class="d-flex justify-center">
     <div class="size-2em transparent-container-box">
         <div class="yellow header-transparent-container-box">
-            <span><a class="button-style nav-green" href="/" class=""><i class="fas fa-arrow-left"></i></a></span>
             <span class="margin-button"><i class="fas fa-sort-alpha-down"></i> by abc <span>
         </div>
 
@@ -13,15 +13,14 @@
             <div class="abc-container">
                 {% for i in range('A','Z') %}
                 <a class="list-button-margin-abc" href="/api/abc/{{ i }}" class="letter">
-                    <span class="button-style nav-yellow {% if i == letter %}active-yellow {% endif %}">{{ i }}</span>
+                    <span class="button-style letter-button nav-yellow {% if i == letter %}active-yellow {% endif %}">{{ i }}</span>
                 </a>
                 {% endfor %}
             </div>
             <div class="list-container">
                 {% for i in drinks %}
-                <a class="list-button-margin"
-                    href="/cocktail/cocktail/{{ i.strDrink|lower }}">
-                    <span class="button-style nav-yellow">{{ i.strDrink }}</span>
+                <a href="/cocktail/cocktail/{{ i.strDrink|lower }}">
+                    <p class="button-style nav-green different-first-letter">{{ i.strDrink }}</p>
                 </a>
                 {% endfor %}
             </div>

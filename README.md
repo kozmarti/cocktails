@@ -1,4 +1,10 @@
-# Simple MVC
+# Description of project 
+A huge selection of cocktails, can be search by alphabeth, name, ingredient, glass, spiced with a festive front-end atmosphere.
+Inspired by a desire to surprise cocktail fan friend, 
+when I bumped into the API https://www.thecocktaildb.com/api.php.
+Enjoy!
+
+# Technical - Simple MVC
 
 ## Description
 
