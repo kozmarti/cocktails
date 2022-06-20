@@ -1,4 +1,6 @@
-# Description of project 
+# Description of project   
+
+
 A huge selection of cocktails, can be search by alphabeth, name, ingredient, glass, spiced with a festive front-end atmosphere.
 I was inspired when I bumped into the API https://www.thecocktaildb.com/api.php.   
 Project deployed here : https://www.cocktailshunter.the-breakfast-show.com/   
