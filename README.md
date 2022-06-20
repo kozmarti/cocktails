@@ -25,8 +25,6 @@ Use this template repository to a new Github repository in WildCodeSchool organi
 4. As soon as your repository have a `.travis.yml` in root folder, Travis should detect it and run test.
 5. Configure Travis as described in the screenshot below, this is needed to avoid performance issues.
 
-> You can watch this screenshot to see minimum mandatory configuration : ![basic config](http://images.innoveduc.fr/symfony4/travis-config.png)
-
 
 
 ### Configure you repository - Settings options
